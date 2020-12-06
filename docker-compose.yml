@@ -3,7 +3,10 @@ version: "3.0"
 services:
   beacon-validator:
     restart: always
-    build: ./image
+    build:
+      context: ./image
+      args:
+          release_version: ${VERSION}
     image: nimbus
     env_file: .env
     volumes:
