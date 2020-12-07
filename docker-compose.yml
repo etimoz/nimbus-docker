@@ -14,8 +14,8 @@ services:
       - ./validator_keys:/var/lib/nimbus/validator_keys
       - ./.nimbus:/var/lib/nimbus
     ports:
-      - 9100:9100/tcp
-      - 9100:9100/udp
+      - 9000:9000/tcp
+      - 9000:9000/udp
     command: /usr/src/nimbus-eth2/nimbus-scripts/start-beacon-node-and-validator.sh
   geth:
       image: ethereum/client-go
