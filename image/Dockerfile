@@ -12,4 +12,4 @@ WORKDIR /usr/src/nimbus-eth2
 
 RUN bash -c "git checkout $release_version"
 
-RUN bash -c "make nimbus_beacon_node"
+RUN bash -c "make -j $(nproc) nimbus_beacon_node"
