@@ -3,11 +3,14 @@ version: "3.0"
 services:
   beacon-validator:
     restart: always
-    build:
-      context: ./image
-      args:
-          release_version: ${VERSION}
-    image: nimbus
+    # uncomment to build locally
+    # comment current image out
+    # build:
+    #   context: ./image
+    #   args:
+    #       release_version: ${VERSION}
+    #image: nimbus
+    image: etimoz/nimbus:v1.0.4
     env_file: .env
     volumes:
       - ./scripts:/usr/src/nimbus-eth2/nimbus-scripts:ro
